@@ -1,0 +1,36 @@
+<div>
+<nav>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link btn btn-primary active" id="pestaña-inicio" data-bs-toggle="tab" data-bs-target="#panel-inicio" type="button" role="tab" aria-controls="panel-inicio" aria-selected="true">Inicio</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link btn btn-primary" id="pestaña-proyecto" data-bs-toggle="tab" data-bs-target="#panel-proyecto" type="button" role="tab" aria-controls="panel-proyecto" aria-selected="false">Nombre_Proyecto</button>
+    </li>
+  </ul>
+</nav>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="panel-inicio" role="tabpanel" aria-labelledby="pestaña-inicio" tabindex="0">
+  	<div id="proyectos">
+  		<h2>Proyectos</h2>
+  		<ul>
+			<li>
+				<a href="/admin">Proyecto 1</a>
+				<p>// <strong>Usuario a</strong> // Enviado: dd-mm-aaaa</p>
+			</li>
+			<li>
+				<a href="/admin">Proyecto 2</a>
+				<p>// <strong>Usuario v</strong> // Enviado: dd-mm-aaaa</p>
+			</li>
+			<li>
+				<a href="/admin">Proyecto 3</a>
+				<p>// <strong>Usuario c</strong> // Enviado: dd-mm-aaaa</p>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="tab-pane fade" id="panel-proyecto" role="tabpanel" aria-labelledby="pestaña-proyecto" tabindex="0">
+    <app-proyecto></app-proyecto>
+</div>
+</div>
