@@ -1,40 +1,36 @@
-<div>
-<nav>
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link btn btn-primary active" id="pestaña-inicio" data-bs-toggle="tab" data-bs-target="#panel-inicio" type="button" role="tab" aria-controls="panel-inicio" aria-selected="true">Inicio</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link btn btn-primary" id="pestaña-proyecto" data-bs-toggle="tab" data-bs-target="#panel-proyecto" type="button" role="tab" aria-controls="panel-proyecto" aria-selected="false">Nombre_Proyecto</button>
-    </li>
-  </ul>
-</nav>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="panel-inicio" role="tabpanel" aria-labelledby="pestaña-inicio" tabindex="0">
-  	<div id="proyectos">
-  		<h2>Proyectos</h2>
-  		<ul>
-			<li>
-				<a href="/home">Proyecto 1</a>
-			</li>
-			<li>
-				<a href="/home">Proyecto 2</a>
-			</li>
-			<li>
-				<a href="/home">Proyecto 3</a>
-			</li>
-		</ul>
-	</div>
+<div class="pd-3">
+  <div class="col-md-6 mt-3">
+    <h4 class="mb-3">Proyectos</h4>
+    <ul class="list-group mb-3">
+      <li
+        class="list-group-item"
+        *ngFor="let proyecto of proyectos; let i = index">
+        <a class="active" routerLink="/proyecto/{{ proyecto.id }}">{{ proyecto.titulo }}</a>
+        <p class="text-muted">"{{ proyecto.descripcion }}"</p>
+        <p> Estado: {{ proyecto.estado }} </p>
+      </li>
+    </ul>
+  </div>
 	<form>
 		<div class="mb-1">
-			<label for="exampleInputEmail1" class="form-label">Nuevo Proyecto</label>
-			<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			<h2 class="mb-3">Nuevo Proyecto</h2>
+			<input
+          type="text"
+          class="form-control"
+          required
+          [(ngModel)]="proyecto.titulo"
+          name="titulo"
+          placeholder="Titulo del Proyecto"
+        />
+        <input
+          type="text"
+          class="form-control"
+          required
+          [(ngModel)]="proyecto.descripcion"
+          name="descripcion"
+          placeholder="descripcion del Proyecto"
+        />
 		</div>
-		<a href="/home" type="submit" class="btn btn-primary">Crear</a>
+		<a type="submit" class="btn btn-success" (click)="guardarProyecto()">Crear</a>
 	</form>
-</div>
-</div>
-<div class="tab-pane fade" id="panel-proyecto" role="tabpanel" aria-labelledby="pestaña-proyecto" tabindex="0">
-    <app-proyecto></app-proyecto>
-</div>
 </div>
