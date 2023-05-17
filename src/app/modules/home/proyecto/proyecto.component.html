@@ -1,20 +1,58 @@
-<div class="bg-llight">
-	<div><h1>Proyecto #Nombre</h1></div>
-	<form id="cuerpo" class="form form-light">
-		<textarea class="form-control" rows="6" data-toggle="tooltip" title="Descripcion del Tema" placeholder="Descripcion del Tema"></textarea>
-		<label class="form-control" rows="6" data-toggle="tooltip" title="Desc">Comentario x</label>
-	    <textarea class="form-control" rows="6" data-toggle="tooltip" title="Planteamiento del problema" placeholder="Planteamiento del problema"></textarea>
-	    <label class="form-control" rows="6" data-toggle="tooltip" title="Plan">Comentario x</label>
-	    <textarea class="form-control" rows="6" data-toggle="tooltip" title="Hipotesis" placeholder="Hipotesis"></textarea>
-	    <label class="form-control" rows="6" data-toggle="tooltip" title="Hipo">Comentario x</label>
-	    <textarea class="form-control" rows="6" data-toggle="tooltip" title="Objetivo General" placeholder="Objetivo General"></textarea>
-	    <label class="form-control" rows="6" data-toggle="tooltip" title="Obje">Comentario x</label>
-	    <textarea class="form-control" rows="6" data-toggle="tooltip" title="Titulo tentativo de la investigacion" placeholder="Titulo tentativo de la investigacion"></textarea>
-	    <label class="form-control" rows="6" data-toggle="tooltip" title="Titu">Comentario x</label>
-	    <textarea class="form-control" rows="6" data-toggle="tooltip" title="justificacion" placeholder="justificacion"></textarea>
-	    <label class="form-control" rows="6" data-toggle="tooltip" title="just">Comentario x</label>
-	    <textarea class="form-control" rows="6" data-toggle="tooltip" title="etc" placeholder="etc"></textarea>
-	    <label class="form-control" rows="6" data-toggle="tooltip" title="etc">Comentario x</label>
+<app-navbar></app-navbar>
+
+<div class="bg-llight edit-form">
+  <a routerLink="/home" class="btn btn-danger" >Volver</a>
+	<div><h1>{{ currentProyecto.titulo }} #{{ parte }}</h1></div>
+	<form class="form form-light">
+
+    <div *ngIf="parte === 0" >
+      <textarea
+        class="form-control"
+        rows="6"
+        name="introduccion del Tema"
+        placeholder="introduccion del Tema"
+        [(ngModel)]="currentProyecto.introduccion" ></textarea>
+    </div>
+
+    <div *ngIf="parte === 1" >
+      <textarea
+        class="form-control"
+        rows="6"
+        name="justificacion del Tema"
+        placeholder="justificacion del Tema"
+        [(ngModel)]="currentProyecto.justificacion" ></textarea>
+    </div>
+
+    <div *ngIf="parte === 2" >
+      <textarea
+        class="form-control"
+        rows="6"
+        name="objetivos del Tema"
+        placeholder="objetivos del Tema"
+        [(ngModel)]="currentProyecto.objetivos" ></textarea>
+    </div>
+
+    <div *ngIf="parte === 3" >
+      <textarea
+        class="form-control"
+        rows="6"
+        name="metodologia del Tema"
+        placeholder="metodologia del Tema"
+        [(ngModel)]="currentProyecto.metodologia" ></textarea>
+    </div>
+
+    <div *ngIf="parte === 4" >
+      <textarea
+        class="form-control"
+        rows="6"
+        name="conclusion del Tema"
+        placeholder="conclusion del Tema"
+        [(ngModel)]="currentProyecto.conclusion" ></textarea>
+    </div>
 	</form>
-	<a href="/home" type="submit" class="btn btn-primary">Guardar Cambios</a>
+    <a class="btn btn-warning" (click)="Anterior()" >Anterior</a>
+    <a class="btn btn-warning" (click)="Siguiente()">Siguiente</a>
+    <br>
+    <a (click)="actualizarProyecto()" type="submit" class="btn btn-primary">Guardar Cambios</a>
 </div>
+<app-footer></app-footer>
