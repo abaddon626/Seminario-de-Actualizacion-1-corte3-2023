@@ -19,24 +19,17 @@ export class ProyectoComponent implements OnInit {
     objetivos: '',
     metodologia: '',
     conclusion: '',
+    comentario: '',
     estado: '',
     setdata: function (item: any): void {
       throw new Error('Function not implemented.');
     }
   }
-  oldProyecto: Proyecto = {
-    id: 0,
-    titulo: '',
-    descripcion: '',
-    introduccion: '',
-    justificacion: '',
-    objetivos: '',
-    metodologia: '',
-    conclusion: '',
-    estado: '',
-    setdata: function (item: any): void {
-      throw new Error('Function not implemented.');
-    }
+
+  alerta = false
+
+  Alerta(): void {
+    this.alerta = true
   }
 
   constructor(
@@ -49,7 +42,6 @@ export class ProyectoComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.currentProyecto = data;
-          this.oldProyecto = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -71,18 +63,24 @@ export class ProyectoComponent implements OnInit {
     }
   }
   actualizarProyecto(): void {
-    if (
-        (this.currentProyecto.introduccion === this.oldProyecto.introduccion) &&
-        (this.currentProyecto.justificacion === this.oldProyecto.justificacion) &&
-        (this.currentProyecto.objetivos === this.oldProyecto.objetivos) &&
-        (this.currentProyecto.metodologia === this.oldProyecto.metodologia) &&
-        (this.currentProyecto.conclusion === this.oldProyecto.conclusion)
-    ) {
-      this.currentProyecto.estado = 'Enviado';}
-      else {
-        this.currentProyecto.estado = 'Corregido';}
+    if (this.currentProyecto.comentario === '') {
+      this.currentProyecto.estado = 'Enviado';
+    } else {
+        this.currentProyecto.estado = 'corregido';
+      }
 
-        this.jsonService.update(this.currentProyecto.id, this.currentProyecto)
+      this.jsonService.update(this.currentProyecto.id, this.currentProyecto)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (e) => console.error(e)
+      })
+  }
+
+  aprobarProyecto(): void {
+    this.currentProyecto.estado = 'aprobado';
+    this.jsonService.update(this.currentProyecto.id, this.currentProyecto)
       .subscribe({
         next: (res) => {
           console.log(res);

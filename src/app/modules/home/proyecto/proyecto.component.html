@@ -2,57 +2,92 @@
 
 <div class="bg-llight edit-form">
   <a routerLink="/home" class="btn btn-danger" >Volver</a>
-	<div><h1>{{ currentProyecto.titulo }} #{{ parte }}</h1></div>
-	<form class="form form-light">
+  <h1 class="text-info">#{{ currentProyecto.titulo }}</h1>
 
-    <div *ngIf="parte === 0" >
+  <div *ngIf="currentProyecto.estado === 'aprobado'; else editable">
+    <p> {{ currentProyecto.introduccion }} </p>
+    <p> {{ currentProyecto.justificacion }} </p>
+    <p> {{ currentProyecto.objetivos }} </p>
+    <p> {{ currentProyecto.metodologia }} </p>
+    <p> {{ currentProyecto.conclusion }} </p>
+  </div>
+
+  <ng-template #editable>
+
+    <form class="form form-light">
+
+      <div *ngIf="parte === 0" >
+        <p class="text-secondary">Introduccion</p>
+        <textarea
+          class="form-control"
+          rows="6"
+          name="introduccion del Tema"
+          placeholder="introduccion del Tema"
+          [(ngModel)]="currentProyecto.introduccion" ></textarea>
+      </div>
+
+      <div *ngIf="parte === 1" >
+        <p class="text-secondary">Justificacion</p>
+        <textarea
+          class="form-control"
+          rows="6"
+          name="justificacion del Tema"
+          placeholder="justificacion del Tema"
+          [(ngModel)]="currentProyecto.justificacion" ></textarea>
+      </div>
+
+      <div *ngIf="parte === 2" >
+        <p class="text-secondary">Objetivos</p>
+        <textarea
+          class="form-control"
+          rows="6"
+          name="objetivos del Tema"
+          placeholder="objetivos del Tema"
+          [(ngModel)]="currentProyecto.objetivos" ></textarea>
+      </div>
+
+      <div *ngIf="parte === 3" >
+        <p class="text-secondary">Metodologia</p>
+        <textarea
+          class="form-control"
+          rows="6"
+          name="metodologia del Tema"
+          placeholder="metodologia del Tema"
+          [(ngModel)]="currentProyecto.metodologia" ></textarea>
+      </div>
+
+      <div *ngIf="parte === 4" >
+        <p class="text-secondary">Conclusion</p>
+        <textarea
+          class="form-control"
+          rows="6"
+          name="conclusion del Tema"
+          placeholder="conclusion del Tema"
+          [(ngModel)]="currentProyecto.conclusion" ></textarea>
+      </div>
+
+    <a class="btn btn-warning" (click)="Anterior()">Anterior</a>
+    <a class="btn btn-warning" (click)="Siguiente()">Siguiente</a>
+
+    <div>
+      <h4 class="text-danger">Comentario || Correcciones:</h4>
       <textarea
         class="form-control"
         rows="6"
-        name="introduccion del Tema"
-        placeholder="introduccion del Tema"
-        [(ngModel)]="currentProyecto.introduccion" ></textarea>
-    </div>
-
-    <div *ngIf="parte === 1" >
-      <textarea
-        class="form-control"
-        rows="6"
-        name="justificacion del Tema"
-        placeholder="justificacion del Tema"
-        [(ngModel)]="currentProyecto.justificacion" ></textarea>
-    </div>
-
-    <div *ngIf="parte === 2" >
-      <textarea
-        class="form-control"
-        rows="6"
-        name="objetivos del Tema"
-        placeholder="objetivos del Tema"
-        [(ngModel)]="currentProyecto.objetivos" ></textarea>
-    </div>
-
-    <div *ngIf="parte === 3" >
-      <textarea
-        class="form-control"
-        rows="6"
-        name="metodologia del Tema"
-        placeholder="metodologia del Tema"
-        [(ngModel)]="currentProyecto.metodologia" ></textarea>
-    </div>
-
-    <div *ngIf="parte === 4" >
-      <textarea
-        class="form-control"
-        rows="6"
-        name="conclusion del Tema"
-        placeholder="conclusion del Tema"
-        [(ngModel)]="currentProyecto.conclusion" ></textarea>
+        name="comentarios y/o correcciones"
+        placeholder="comentarios y/o correcciones"
+        [(ngModel)]="currentProyecto.comentario" ></textarea>
+      <p *ngIf="currentProyecto.comentario !== ''" class="text-secondary">*Mientras haya un comentario o correcion, el proyecto estara en el estado 'corregido'</p>
     </div>
 	</form>
-    <a class="btn btn-warning" (click)="Anterior()" >Anterior</a>
-    <a class="btn btn-warning" (click)="Siguiente()">Siguiente</a>
-    <br>
-    <a (click)="actualizarProyecto()" type="submit" class="btn btn-primary">Guardar Cambios</a>
+    <a (click)="actualizarProyecto()" type="submit" class="btn btn-primary" routerLink="/home">Guardar Cambios</a>
+    <a (click)="Alerta()" type="submit" class="btn btn-success" >Aprobar proyecto</a>
+    <div *ngIf="alerta" class="alert alert-warning" role="alert">
+      <strong>ALERTA:</strong> una vez aprobado el proyecto no sera posible volver a editarlo. <br>
+      El proyecto solo estara disponible en modo lectura. <br>
+      Esta accion es irreversible <br>
+      <a (click)="aprobarProyecto()" type="submit" class="btn btn-success" >Aprobar proyecto</a>
+    </div>
+  </ng-template>
 </div>
 <app-footer></app-footer>

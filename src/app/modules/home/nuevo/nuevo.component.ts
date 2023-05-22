@@ -19,6 +19,7 @@ export class NuevoComponent implements OnInit {
     objetivos: '',
     metodologia: '',
     conclusion: '',
+    comentario: '',
     estado: '',
     setdata(item: any) {
       this.id = item.id
@@ -29,6 +30,7 @@ export class NuevoComponent implements OnInit {
       this.objetivos = item.objetivos
       this.metodologia = item.metodologia
       this.conclusion = item.conclusion
+      this.comentario = item.comentario
       this.estado = item.estado
   }
   }
@@ -60,6 +62,7 @@ export class NuevoComponent implements OnInit {
       objetivos: this.proyecto.objetivos,
       metodologia: this.proyecto.metodologia,
       conclusion: this.proyecto.conclusion,
+      comentario: this.proyecto.comentario,
       estado: 'borrador',
     };
     this.jsonService.create(data)

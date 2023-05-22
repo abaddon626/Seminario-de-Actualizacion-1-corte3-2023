@@ -1,17 +1,6 @@
 {
   "proyectos": [
     {
-      "id": 0,
-      "titulo": "Titulo del proyecto",
-      "descripcion": "descripcion del proyecto",
-      "introduccion": "introduccion",
-      "justificacion": "justificacion del proyecto",
-      "objetivos": "objetivos",
-      "metodologia": "metodologia",
-      "conclusion": "conclusion",
-      "estado": "estado"
-    },
-    {
       "id": 4,
       "titulo": "haber ahora",
       "descripcion": "si funciona",
@@ -23,70 +12,28 @@
       "estado": "enviado"
     },
     {
-      "id": 5,
-      "titulo": "Titulo de prueba",
-      "descripcion": "descripcion de prueba @_@",
-      "introduccion": "",
-      "justificacion": "",
-      "objetivos": "",
-      "metodologia": "",
-      "conclusion": "",
-      "estado": "enviado"
-    },
-    {
-      "id": 6,
-      "titulo": "titulo de prueba #3",
-      "descripcion": "tenia la funcion equivocada",
-      "introduccion": "dsfsdfds",
-      "justificacion": "fdsfdsfdsfs",
-      "objetivos": "fdsfdfsd",
-      "metodologia": "fdsfdsfd",
-      "conclusion": "fdsfdfsd",
-      "estado": "enviado"
-    },
-    {
-      "id": 7,
-      "titulo": "prueba cuatro",
-      "descripcion": "recargara la lista?",
-      "introduccion": "",
-      "justificacion": "",
-      "objetivos": "",
-      "metodologia": "",
-      "conclusion": "",
-      "estado": "borrador"
-    },
-    {
-      "id": 8,
-      "titulo": "titulo del proyecto",
-      "descripcion": "descripcion",
-      "introduccion": "",
-      "justificacion": "",
-      "objetivos": "",
-      "metodologia": "",
-      "conclusion": "",
-      "estado": "borrador"
-    },
-    {
-      "id": 9,
-      "titulo": "titulo del proyecto",
-      "descripcion": "descripcion",
-      "introduccion": "",
-      "justificacion": "",
-      "objetivos": "",
-      "metodologia": "",
-      "conclusion": "",
-      "estado": "borrador"
-    },
-    {
       "id": 10,
-      "titulo": "haber",
-      "descripcion": "otra vez",
-      "introduccion": "bbbbbbbbbbbbbbbbbbb",
-      "justificacion": "ssssssssssssrrr",
-      "objetivos": "tttttttttttccccccccccc",
-      "metodologia": "aaaaaaaaaaaa",
-      "conclusion": "eeeeeeeeeebbbbbbbbb",
-      "estado": "Enviado"
+      "titulo": "prueba 10",
+      "descripcion": "descripcion (づ｡◕‿‿◕｡)づ",
+      "introduccion": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur omnis iure temporibus necessitatibus expedita, soluta ea quia et a similique excepturi, officiis mollitia dicta molestiae. Sed id nulla unde officiis",
+      "justificacion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, soluta eligendi tempore optio, voluptatibus facilis perferendis voluptas qui eius, cupiditate consequatur consectetur provident odit amet rem libero ut commodi illum",
+      "objetivos": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quidem, sapiente corporis dolore expedita quasi sunt facilis nemo voluptatibus? Velit beatae nesciunt minima obcaecati! Recusandae molestiae possimus impedit amet totam.",
+      "metodologia": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt aperiam consequuntur minus ipsa magnam temporibus a cumque dignissimos maxime, officia atque porro, necessitatibus repudiandae quod repellendus sapiente provident rerum similique.",
+      "conclusion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, inventore officia. Asperiores fugiat omnis numquam. Illo atque necessitatibus blanditiis. Est veritatis totam saepe omnis autem accusamus ex rem magni sed",
+      "estado": "aprobado",
+      "comentario": ""
+    },
+    {
+      "id": 11,
+      "titulo": "(ᵔᴥᵔ)",
+      "descripcion": "Woof",
+      "introduccion": "",
+      "justificacion": "",
+      "objetivos": "",
+      "metodologia": "",
+      "conclusion": "",
+      "comentario": "",
+      "estado": "borrador"
     }
   ]
 }

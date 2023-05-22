@@ -7,6 +7,7 @@ export class Proyecto {
   objetivos?: string;
   metodologia?: string;
   conclusion?: string;
+  comentario?: string;
   estado?: any;
     setdata(item: any) {
       this.id = item.id
@@ -17,6 +18,7 @@ export class Proyecto {
       this.objetivos = item.objetivos
       this.metodologia = item.metodologia
       this.conclusion = item.conclusion
+      this.comentario = item.comentario
       this.estado = item.estado
   }
 }
