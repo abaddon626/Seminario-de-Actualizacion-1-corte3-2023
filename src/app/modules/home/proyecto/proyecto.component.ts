@@ -9,7 +9,6 @@ import { JsonService } from 'src/app/services/json.service';
   styleUrls: ['./proyecto.component.sass']
 })
 export class ProyectoComponent implements OnInit {
-  parte = 0;
   @Input() currentProyecto: Proyecto = {
     id: 0,
     titulo: '',
@@ -27,6 +26,8 @@ export class ProyectoComponent implements OnInit {
   }
 
   alerta = false
+
+  parte = 0
 
   Alerta(): void {
     this.alerta = true
@@ -62,17 +63,18 @@ export class ProyectoComponent implements OnInit {
       this.parte = this.parte - 1
     }
   }
+
   actualizarProyecto(): void {
     if (this.currentProyecto.comentario === '') {
-      this.currentProyecto.estado = 'Enviado';
+      this.currentProyecto.estado = 'enviado';
     } else {
-        this.currentProyecto.estado = 'corregido';
-      }
-
-      this.jsonService.update(this.currentProyecto.id, this.currentProyecto)
+      this.currentProyecto.estado = 'corregido';
+    }
+    this.jsonService.update(this.currentProyecto.id, this.currentProyecto)
       .subscribe({
         next: (res) => {
           console.log(res);
+          this.getProyecto(this.route.snapshot.params["id"])
         },
         error: (e) => console.error(e)
       })
@@ -84,6 +86,7 @@ export class ProyectoComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
+          this.getProyecto(this.route.snapshot.params["id"])
         },
         error: (e) => console.error(e)
       })

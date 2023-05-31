@@ -9,7 +9,8 @@
       "objetivos": "los objetivos\na\nb\nc",
       "metodologia": "las metodologias\n1\n2\n3",
       "conclusion": "La conclucion =D",
-      "estado": "enviado"
+      "estado": "enviado",
+      "comentario": ""
     },
     {
       "id": 10,
@@ -27,6 +28,18 @@
       "id": 11,
       "titulo": "(ᵔᴥᵔ)",
       "descripcion": "Woof",
+      "introduccion": "",
+      "justificacion": "",
+      "objetivos": "",
+      "metodologia": "",
+      "conclusion": "",
+      "comentario": "",
+      "estado": "borrador"
+    },
+    {
+      "id": 12,
+      "titulo": "titulo provisional",
+      "descripcion": "descripcion xyz",
       "introduccion": "",
       "justificacion": "",
       "objetivos": "",

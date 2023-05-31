@@ -1,4 +1,6 @@
 <div class="pd-3">
+
+  <!--* LISTADO DE PROYECTOS -->
   <div class="col-md-6 mt-3">
     <h4 class="mb-3">Proyectos</h4>
     <ul class="list-group mb-3">
@@ -18,12 +20,14 @@
       </li>
     </ul>
   </div>
-	<form>
+
+    <!--* CREAR NUEVO PROYECTO -->
+  <form>
 		<div class="mb-1">
 			<h2 class="mb-3">Nuevo Proyecto</h2>
 			<input
           type="text"
-          class="form-control"
+          class="form-control m-1"
           required
           [(ngModel)]="proyecto.titulo"
           name="titulo"
@@ -31,7 +35,7 @@
         />
         <input
           type="text"
-          class="form-control"
+          class="form-control m-1"
           required
           [(ngModel)]="proyecto.descripcion"
           name="descripcion"

@@ -1,17 +1,34 @@
 <app-navbar></app-navbar>
 
 <div class="bg-llight edit-form">
-  <a routerLink="/home" class="btn btn-danger" >Volver</a>
+  <a routerLink="/home" class="btn btn-danger m-1" >Volver</a>
   <h1 class="text-info">#{{ currentProyecto.titulo }}</h1>
-
+  <p class="text-secondary">{{ currentProyecto.estado }}</p>
+  <!--? APROBADO -->
   <div *ngIf="currentProyecto.estado === 'aprobado'; else editable">
-    <p> {{ currentProyecto.introduccion }} </p>
-    <p> {{ currentProyecto.justificacion }} </p>
-    <p> {{ currentProyecto.objetivos }} </p>
-    <p> {{ currentProyecto.metodologia }} </p>
-    <p> {{ currentProyecto.conclusion }} </p>
+    <article>
+      <h5>Introduccion</h5>
+      <p>{{ currentProyecto.introduccion }}</p>
+    </article>
+    <article>
+      <h5>Justificacion</h5>
+      <p>{{ currentProyecto.justificacion }}</p>
+    </article>
+    <article>
+      <h5>Objetivos</h5>
+      <p>{{ currentProyecto.objetivos }}</p>
+    </article>
+    <article>
+      <h5>Metodologia</h5>
+      <p>{{ currentProyecto.metodologia }}</p>
+    </article>
+    <article>
+      <h5>Conclusion</h5>
+      <p>{{ currentProyecto.conclusion }}</p>
+    </article>
   </div>
 
+  <!--? NO APROBADO -->
   <ng-template #editable>
 
     <form class="form form-light">
@@ -66,8 +83,8 @@
           [(ngModel)]="currentProyecto.conclusion" ></textarea>
       </div>
 
-    <a class="btn btn-warning" (click)="Anterior()">Anterior</a>
-    <a class="btn btn-warning" (click)="Siguiente()">Siguiente</a>
+    <a class="btn btn-warning m-1" (click)="Anterior()">Anterior</a>
+    <a class="btn btn-warning m-1" (click)="Siguiente()">Siguiente</a>
 
     <div>
       <h4 class="text-danger">Comentario || Correcciones:</h4>
@@ -80,13 +97,13 @@
       <p *ngIf="currentProyecto.comentario !== ''" class="text-secondary">*Mientras haya un comentario o correcion, el proyecto estara en el estado 'corregido'</p>
     </div>
 	</form>
-    <a (click)="actualizarProyecto()" type="submit" class="btn btn-primary" routerLink="/home">Guardar Cambios</a>
-    <a (click)="Alerta()" type="submit" class="btn btn-success" >Aprobar proyecto</a>
-    <div *ngIf="alerta" class="alert alert-warning" role="alert">
+    <a (click)="actualizarProyecto()" type="submit" class="btn btn-primary m-1">Guardar Cambios</a>
+    <a (click)="Alerta()" type="submit" class="btn btn-success m-1" >Aprobar proyecto</a>
+    <div *ngIf="alerta" class="alert alert-warning m-1" role="alert">
       <strong>ALERTA:</strong> una vez aprobado el proyecto no sera posible volver a editarlo. <br>
       El proyecto solo estara disponible en modo lectura. <br>
       Esta accion es irreversible <br>
-      <a (click)="aprobarProyecto()" type="submit" class="btn btn-success" >Aprobar proyecto</a>
+      <a (click)="aprobarProyecto()" type="submit" class="btn btn-success m-1" >Aprobar proyecto</a>
     </div>
   </ng-template>
 </div>
