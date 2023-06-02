@@ -1,13 +1,17 @@
 export class Proyecto {
   id?: number;
+
   titulo?: string;
   descripcion?: string;
+
   introduccion?: string;
   justificacion?: string;
   objetivos?: string;
   metodologia?: string;
   conclusion?: string;
+
   comentario?: string;
+
   estado?: any;
     setdata(item: any) {
       this.id = item.id
